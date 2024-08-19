@@ -2,6 +2,11 @@
   "name": "primeflex",
   "displayName": "primeflex",
   "icon": "assets/icon.png",
+  "author": {
+    "name": "Franklin",
+    "email": "franklinteixeira205@gmail.com",
+    "url": "https://github.com/franklinST-05"
+  },
   "description": "Intelligent PrimeFlex CSS tooling for VS Code",
   "version": "0.0.1",
   "engines": {
