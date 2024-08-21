@@ -13,6 +13,10 @@
   "engines": {
     "vscode": "^1.92.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franklinST-05/primeflex"
+  },
   "keywords": [
     "primeflex",
     "prime",
