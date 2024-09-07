@@ -1,8 +1,16 @@
+import { CONFIG_SECTION } from "../envs";
+import { getRelativeConfiguration } from "./getRelativeConfiguration";
 import { replaceCommentsWithEmptySpace } from "./replaceCommentsWithEmptySpace";
 
-const classRegex = /\b((class|className|ngClass)\s*=\s*[{]?\s*['"`])([^'"`{}]*)(['"`](?:\s*[}])?)/g;
-
 export function extractClassNames(content: string) {
+  const config = getRelativeConfiguration(CONFIG_SECTION);
+  const classAttributes = ["class", "className", "styleClass", "ngClass", "class:list", ...config.get("classAttributes", [])];
+
+  const classRegex = new RegExp(
+    String.raw`\b((${classAttributes.join("|")})\s*=\s*[{]?\s*['"\`])([^'"\`{}]*)(['"\`](?:\s*[}])?)`,
+    "g"
+  );
+
   content = replaceCommentsWithEmptySpace(content);
   const matches = Array.from(content.matchAll(classRegex));
 

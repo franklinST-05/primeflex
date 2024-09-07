@@ -9,7 +9,7 @@
     "url": "https://github.com/franklinST-05"
   },
   "description": "Intelligent PrimeFlex CSS tooling for VS Code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.92.0"
   },
@@ -89,6 +89,12 @@
           "default": true,
           "scope": "resource",
           "description": "Enable or disable the autocomplete feature."
+        },
+        "primeflex.classAttributes": {
+          "type": "array",
+          "default": [],
+          "scope": "resource",
+          "description": "The HTML attributes for which to provide class completions."
         }
       }
     }
